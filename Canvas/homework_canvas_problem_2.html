@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8">
+
+  <title>Homework Canvas Problem 1</title>
+	<style>
+		canvas{
+			background: #444;
+			border: 5px solid red;
+		}
+	</style>
+  <meta name="viewport" content="width=device-width">
+</head>
+<body>
+	<div>2. Draw a circle that flies inside a box</div>
+	<canvas id="canvas-area" width="900" height="600">
+	</canvas>
+<script>
+	var canvas = document.getElementById("canvas-area"),
+		ctx = canvas.getContext("2d"),
+    	x = 50,
+    	y = 50,
+    	r = 15,
+    	xDirection = 1,
+    	yDirection = 1;
+    	
+	ctx.strokeStyle = "#80ff80";
+	ctx.fillStyle = "#ffa6ff";
+	ctx.lineWidth = 1;
+
+	function bounce(){
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.beginPath();
+        drawBall(x, y, r);
+
+            if ((x + r) >= canvas.width || (x <= r)) {
+                xDirection *= -1;
+            }
+            if ((y + r) >= canvas.height || (y <= r)) {
+                yDirection *= -1;
+            }
+
+        x += 5*xDirection;
+        y += 5*yDirection;
+
+		requestAnimationFrame(bounce);
+	}
+
+	function drawBall(x, y, r){
+		ctx.arc(x, y, r, 0, 2*Math.PI);
+		ctx.fill();
+		ctx.stroke();
+	}
+
+	bounce();
+
+</script>
+
+</body>
+</html>

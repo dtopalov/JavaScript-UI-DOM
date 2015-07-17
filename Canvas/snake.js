@@ -239,7 +239,13 @@
     function generateTable(highScores) {
         var table = document.createElement('table'),
         n,
-        topFive = highScores.splice(0, 5);
+        topFive;
+
+        if(highScores.length > 5){
+        	topFive = highScores.splice(0, 5);
+        } else {
+        	topFive = highScores;
+        }
 
         table.style.margin = 'auto';
         table.style.fontFamily = 'Arial';

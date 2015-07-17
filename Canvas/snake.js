@@ -238,8 +238,9 @@
 
     function generateTable(highScores) {
         var table = document.createElement('table'),
-        n,
-        topFive;
+        i,
+        topFive,
+        len;
 
         if(highScores.length > 5){
         	topFive = highScores.splice(0, 5);
@@ -251,8 +252,8 @@
         table.style.fontFamily = 'Arial';
         generateRow(table, 'TOP 5 SCORES:');
 
-        for (n = 0; n < 5; n+=1) {
-            generateRow(table, topFive[n].name + ' ' + topFive[n].score);
+        for (i = 0, len = topFive.length; i < len; i += 1) {
+            generateRow(table, topFive[i].name + ' ' + topFive[i].score);
         }
 
         return table;

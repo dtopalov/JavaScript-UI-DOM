@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8">
+
+  <title>Homework Canvas Problem 3</title>
+	<style>
+		canvas{
+			background: #444;
+			border: 5px solid red;
+			margin-right: 20px;
+			float: left;
+		}
+
+		#results{
+			margin-left: 20px;
+			margin-bottom: 20px;
+			font-family: Arial;
+			font-size: 20px;
+		}
+
+		#start{
+			width: 120px;
+			height: 50px;
+			font-family: Arial;
+			font-size: 20px;
+		}
+
+		#start:hover{
+			background: #a6ffa6;
+		}
+
+	</style>
+  <meta name="viewport" content="width=device-width">
+</head>
+<body onload="docReady()">
+	<canvas id="canvas-area" width="800" height="600">
+	</canvas>
+	<div id="results"></div>
+	<div id="scores"></div>
+	<button id="start">Start over</button>
+<script src="snake.js"></script>
+</body>
+</html>

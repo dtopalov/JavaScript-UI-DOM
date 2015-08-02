@@ -25,6 +25,8 @@ function solve(){
 		$(selector).val($(this).attr('data-value'));
 		$('.current').html($(this).html());
 	});
+
+	return this;
   };
 }
 

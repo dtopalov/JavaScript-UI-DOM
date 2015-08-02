@@ -2,7 +2,7 @@ function solve(){
   return function(selector){
     var container = $('<div />').addClass('dropdown-list'),
     newDiv = $('<div class="options-container" style="position: absolute; display: none;"></div>'),
-    numberOfOptions = $(selector).children().size(),
+    numberOfOptions = $(selector).find('option').size(),
     options = $(selector).find('option'),
     i;
 

@@ -10,6 +10,8 @@ function solve(){
     	for(i = 0, len = data.length; i < len; i += 1){
     		this.append(compiledHTML(data[i]));
     	}
+
+        return this;
     };
   };
 }
